@@ -1,5 +1,5 @@
 from src.ip import fetch_vulnerabilities, get_ip_input
-from cve import get_cve_info, get_cve_input
+from src.cve import get_cve_info, get_cve_input
 from termcolor import colored
 import os
 import requests
