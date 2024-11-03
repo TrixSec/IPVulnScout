@@ -1,11 +1,11 @@
-from src.ip import fetch_vulnerabilities, get_ip_input
+from src.ip import fetch_vulnerabilities, get_ip_input as get_vuln_ip_input
 from src.cve import get_cve_info, get_cve_input
+from src.port import fetch_open_ports, get_ip_input as get_port_ip_input
 from termcolor import colored
 import os
 import requests
-import random 
-from config.config import IPVULNSCOUT_VERSION
-from config.config import print_banner
+import random
+from config.config import IPVULNSCOUT_VERSION, print_banner
 
 menu_colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
 
@@ -40,6 +40,7 @@ def main():
         print(colored("|" + "*" * 31 + "|", random_color, attrs=['bold']))
         print(colored("| 1. IP Vulnerability Checking            |", random_color, attrs=['bold']))
         print(colored("| 2. CVE Information                      |", random_color, attrs=['bold']))
+        print(colored("| 3. Open Ports Checking                  |", random_color, attrs=['bold']))
         print(colored("| 0. Exit                                 |", random_color, attrs=['bold']))
         print("-" * 33)
 
@@ -51,13 +52,18 @@ def main():
 
         if choice == 1:
             print(colored("\n[•] IP Vulnerability Checking", 'cyan'))
-            ip = get_ip_input()
+            ip = get_vuln_ip_input()
             fetch_vulnerabilities(ip)
         
         elif choice == 2:
             print(colored("\n[•] CVE Information", 'cyan'))
             cve_id = get_cve_input()
             get_cve_info(cve_id)
+
+        elif choice == 3:
+            print(colored("\n[•] Open Ports Checking", 'cyan'))
+            ip = get_port_ip_input()
+            fetch_open_ports(ip)
         
         elif choice == 0:
             print(colored("\nExiting IPVulnScout. Goodbye!", 'green'))
@@ -68,3 +74,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
