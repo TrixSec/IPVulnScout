@@ -69,7 +69,7 @@ def main():
 
         elif choice == 4:
             print(colored("\n[•] Reverse IP Lookup", 'cyan'))
-            reverseip()
+            reverse()
         
         elif choice == 0:
             print(colored("\nExiting IPVulnScout. Goodbye!", 'green'))
