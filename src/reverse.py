@@ -25,16 +25,19 @@ def load_existing_domains(filename):
     return set()
 
 def save_domains(domains, filename, format_option):
-    domain = list(domains)
-    with open(filename, 'a', encoding="utf-8") as file:
-        for domain in domains[:MAX_COUNT]:  
+    domains = list(domains)
+    
+    with open(filename, 'a') as file:
+        for domain in domains[:MAX_COUNT]: 
             if format_option == 1:
                 file.write(f"{domain}\n")
             elif format_option == 2:
                 file.write(f"http://{domain}\n")
             elif format_option == 3:
                 file.write(f"https://{domain}\n")
-    print(f"{prompt_color}Domains saved to {filename}")
+    
+    print(f"{len(domains[:MAX_COUNT])} new domains saved in {filename}.")
+
 
 def extract_domain(domain):
     ext = tldextract.extract(domain)
