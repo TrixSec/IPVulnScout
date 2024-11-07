@@ -6,6 +6,7 @@ import os
 import requests
 import random
 from config.config import IPVULNSCOUT_VERSION, print_banner
+from src.reverse import reverseip
 
 menu_colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
 
@@ -41,6 +42,7 @@ def main():
         print(colored("| 1. IP Vulnerability Checking            |", random_color, attrs=['bold']))
         print(colored("| 2. CVE Information                      |", random_color, attrs=['bold']))
         print(colored("| 3. Open Ports Checking                  |", random_color, attrs=['bold']))
+        print(colored("| 4. Reverse IP Lookup                    |", random_color, attrs=['bold']))
         print(colored("| 0. Exit                                 |", random_color, attrs=['bold']))
         print("-" * 33)
 
@@ -64,6 +66,10 @@ def main():
             print(colored("\n[•] Open Ports Checking", 'cyan'))
             ip = get_port_ip_input()
             fetch_open_ports(ip)
+
+        elif choice == 4:
+            print(colored("\n[•] Reverse IP Lookup", 'cyan'))
+            reverseip()
         
         elif choice == 0:
             print(colored("\nExiting IPVulnScout. Goodbye!", 'green'))
@@ -74,4 +80,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
