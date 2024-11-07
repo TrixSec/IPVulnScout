@@ -56,7 +56,7 @@ def fetch_reverseip(ip):
         raw_domains = [td.text for td in soup.select("table.table td")]
         
         domains = list(set(extract_domain(d) for d in raw_domains if "." in d))
-        print(f"{prompt_color}[Rapiddns] Found {len(domains)} unique domains for IP: {ip}")
+        print(f"{prompt_color}Found {len(domains)} unique domains for IP: {ip}")
     except Exception as e:
         print(f"{prompt_color}[Error] Failed to fetch from RapidDNS: {e}")
 
