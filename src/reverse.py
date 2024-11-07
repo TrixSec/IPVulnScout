@@ -25,7 +25,7 @@ def load_existing_domains(filename):
     return set()
 
 def save_domains(domains, filename, format_option):
-    domain = list(domain)
+    domain = list(domains)
     with open(filename, 'a', encoding="utf-8") as file:
         for domain in domains[:MAX_COUNT]:  
             if format_option == 1:
