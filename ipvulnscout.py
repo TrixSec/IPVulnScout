@@ -6,7 +6,7 @@ import os
 import requests
 import random
 from config.config import IPVULNSCOUT_VERSION, print_banner
-from src.reverse import reverseip
+from src.reverse import reverse
 
 menu_colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
 
