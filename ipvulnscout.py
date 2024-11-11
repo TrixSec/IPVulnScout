@@ -7,6 +7,7 @@ import requests
 import random
 from config.config import IPVULNSCOUT_VERSION, print_banner
 from src.reverse import reverse
+from src.domtoip import domaintoip
 
 menu_colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
 
@@ -43,6 +44,7 @@ def main():
         print(colored("| 2. CVE Information                      |", random_color, attrs=['bold']))
         print(colored("| 3. Open Ports Checking                  |", random_color, attrs=['bold']))
         print(colored("| 4. Reverse IP Lookup                    |", random_color, attrs=['bold']))
+        print(colored("| 5. Domain To IP                         |", random_color, attrs=['bold']))
         print(colored("| 0. Exit                                 |", random_color, attrs=['bold']))
         print("-" * 33)
 
@@ -70,6 +72,10 @@ def main():
         elif choice == 4:
             print(colored("\n[•] Reverse IP Lookup", 'cyan'))
             reverse()
+
+        elif choice == 5:
+            print(colored("\n[•] Domain To IP", 'cyan'))
+            domaintoip()
         
         elif choice == 0:
             print(colored("\nExiting IPVulnScout. Goodbye!", 'green'))

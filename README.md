@@ -5,7 +5,7 @@ IPVulnScout is a powerful tool designed for vulnerability checking of IP address
 ## Author and Contributions
 **Author**: Trix Cyrus  
 **Developed by**: TrixSec Org 
-**Current Version**: v1.2
+**Current Version**: v1.3
 **Maintained**: Yes 
 - **Telegram**: [@Trixsec](https://t.me/Trixsec)  
 - **GitHub**: [IPVulnScout](https://github.com/TrixSec/IPVulnScout)
@@ -16,6 +16,7 @@ IPVulnScout is a powerful tool designed for vulnerability checking of IP address
 - **CVE Information Retrieval**: Get detailed information on specific CVEs.
 - **Open Ports Info**: Get Info About Open Ports
 - **Reverse IP Lookup**: Can do Reverse IP Lookup And Fetch upto 10000 Domains if available
+- **Domain To IP**: Get IP Address Of Any Domain
 ## Requirements
 
 - Python 3.x
