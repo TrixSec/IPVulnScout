@@ -7,7 +7,7 @@ from colorama import init, Fore, Style
 import tldextract
 import os
 import cloudscraper
-from config import REVERSE_URL, TNTCODE_URL
+from config.config import REVERSE_URL, TNTCODE_URL
 
 init(autoreset=True)
 colors = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN]
