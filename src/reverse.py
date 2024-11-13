@@ -52,7 +52,7 @@ def fetch_domains_from_source(url, headers):
         raw_domains = [td.text for td in soup.select("table.table td")]
         domains = list(set(extract_domain(d) for d in raw_domains if "." in d))
     except Exception as e:
-        print(f"{prompt_color}[Error] Failed to fetch domains: {e}")
+        print(f"{prompt_color}[Error With First URL]")
     return domains
 
 def fetch_domains_with_scraper(url, headers):
@@ -73,7 +73,7 @@ def fetch_domains_with_scraper(url, headers):
         else:
             print(f"{prompt_color}[Error] Response code: {response.status_code}")
     except Exception as e:
-        print(f"{prompt_color}[Error] Failed to fetch domains: {e}")
+        print(f"{prompt_color}[Error With Second URL]")
     return domains
 
 def reverse():
